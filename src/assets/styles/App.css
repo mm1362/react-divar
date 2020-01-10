@@ -1,0 +1,289 @@
+@font-face {
+	font-family: yekan;
+	src: url("../fonts/Yekan.eot") format("embedded-opentype"),
+		url("../fonts/Yekan.woff") format("woff"),
+		url("../fonts/Yekan.ttf") format("truetype");
+}
+@font-face {
+	font-family: IRANSansWeb;
+	font-weight: 400;
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb.70a5f97.eot);
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb.70a5f97.eot#iefix)
+			format("embedded-opentype"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb.9d38733.woff2)
+			format("woff2"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb.50f4bba.woff)
+			format("woff"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb.244a401.ttf)
+			format("truetype");
+}
+/* @font-face {
+	font-family: IRANSansWeb;
+	font-weight: 700;
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Bold.a65cbf9.eot);
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Bold.a65cbf9.eot#iefix)
+			format("embedded-opentype"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Bold.2f6f164.woff2)
+			format("woff2"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Bold.d44408d.woff)
+			format("woff"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Bold.9471804.ttf)
+			format("truetype");
+}
+@font-face {
+	font-family: IRANSansWeb;
+	font-weight: 300;
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Light.9d7efb9.eot);
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Light.9d7efb9.eot#iefix)
+			format("embedded-opentype"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Light.7c20701.woff2)
+			format("woff2"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Light.aac7a64.woff)
+			format("woff"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Light.e5b2aca.ttf)
+			format("truetype");
+}
+@font-face {
+	font-family: IRANSansWeb;
+	font-weight: 500;
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Medium.c18ca26.eot);
+	src: url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Medium.c18ca26.eot#iefix)
+			format("embedded-opentype"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Medium.7c1c84d.woff2)
+			format("woff2"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Medium.7bfa046.woff)
+			format("woff"),
+		url(https://s100.divarcdn.com/statics/2019/12/IRANSansWeb_Medium.8948958.ttf)
+			format("truetype");
+} */
+svg {
+	width: 32px;
+	height: 32px;
+}
+
+body {
+	margin: 0;
+	font-family: IRANSansWeb;
+	direction: rtl;
+	text-align: right;
+}
+/*****************************************************/
+.App {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+/*****************************************************/
+.Header {
+	position: fixed;
+	top:0;
+	width: 100%;
+	padding: 0.5rem;
+	border-bottom: 2px solid rgba(100, 100, 100, 0.3);
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-family: yekan;
+	z-index: 100;
+	background-color: whitesmoke;
+	
+}
+
+.Header a {
+	text-decoration: none;
+}
+.Header i {
+	font-size: 1.5rem;
+	padding: 10px;
+}
+.Header i:hover {
+	cursor: pointer;
+}
+@media (min-width: 540px) {
+	.Header i {
+		display: none;
+	}
+}
+/*****************************************************/
+.Menu {
+	justify-content: flex-end;
+	flex-grow: 1;
+}
+@media (max-width: 540px) {
+	.Menu {
+		display: none;
+	}
+}
+/*****************************************************/
+.SideMenu {
+	position: fixed;
+	/* width: 80px; */
+	max-width: 70%;
+	left: 0;
+	top: 50px;
+	z-index: 10;
+	background-color: white;
+	padding: 10px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	box-sizing: border-box;
+	box-shadow: 2px 1px 5px gray;
+	transition: transform 0.3s ease-out;
+	transform: translateY(-150%);
+}
+.SideMenu.open {
+	transform: translateY(0);
+}
+.SideMenu a {
+	display: block;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+}
+
+@media (min-width: 540px) {
+	.SideMenu {
+		display: none;
+	}
+}
+/*****************************************************/
+.Content {
+	padding: 1rem;
+	flex-grow: 1;
+	margin-top: 5rem;
+}
+/*****************************************************/
+.Home {
+	display: flex;
+	height: 100%;
+}
+/*****************************************************/
+.SideBar {
+	/* box-shadow: -1px 2px 5px black; */
+	border-left: 2px solid rgba(0, 0, 0, 0.15);
+	margin: 1rem;
+	min-width: 10rem;
+}
+.SideBar a {
+	font-family: IRANSansWeb;
+	font-size: 1rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+	.SideBar {
+		display: none;
+	}
+}
+/*****************************************************/
+.SearchBox {
+	text-align: center;
+	height: 50px;
+	padding: 20px;
+	margin-bottom: 50px;
+}
+.SearchBox input {
+	width: 75%;
+	padding: 10px;
+	border: solid 1px transparent;
+	box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
+	font-size: 15px;
+	fill: rgba(12, 12, 13, 0.4);
+}
+.SearchBox:hover input {
+	box-shadow: 0 2px 4px 0 rgba(12, 12, 13, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+/*****************************************************/
+.Items {
+	display: flex;
+	flex-wrap: wrap;
+}
+.Item {
+	font-family: yekan;
+	padding: 1rem;
+	display: flex;
+	text-align: right;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+.Item * {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.Items img {
+	flex: 0 0 128px;
+	border-radius: 4px;
+	height: 128px;
+}
+.Item:before,
+.Item:after {
+	position: absolute;
+	bottom: 0;
+	right: 1rem;
+	left: 1rem;
+	height: 1px;
+	content: "";
+	background-color: rgba(34, 36, 38, 0.15);
+}
+.Item:after {
+	background-color: #a62626;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: transform 0.5s;
+}
+.Item:hover::after {
+	visibility: visible;
+	transform: scaleX(1);
+}
+a.Item:active,
+a.Item:hover {
+	text-decoration: none;
+}
+/*****************************************************/
+.ShowItem img {
+	float: left;
+	width: 50%;
+}
+/*****************************************************/
+.Basket .item {
+	font-family: yekan;
+	padding: 1rem;
+	display: flex;
+	text-align: right;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	align-items: center;
+	box-shadow: -2px 5px 5px rgba(0, 0, 0, 0.15);
+}
+.Basket .item * {
+	margin-bottom: 0;
+}
+/* .item > div {
+  flex-grow: 1;
+}
+
+.item img {
+  float: right;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 80px;
+}
+.item button {
+  align-self: flex-end;
+}
+
+img {
+  max-width: 100%;
+}
+
+.ant-pagination {
+  direction: ltr;
+  text-align: center;
+} */
