@@ -6,8 +6,10 @@ import Header from './Header';
 import SideMenu from './SideMenu';
 import BasketContext from './BasketContext';
 import Content from './Content';
+import { connect } from 'react-redux';
+import * as actionTypes from '../store/actions'
 
-export default class App extends Component {
+class App extends Component {
 	state = {
 		basketProducts: [],
 		basketCount: 0,
@@ -56,6 +58,20 @@ export default class App extends Component {
 
 }
 
+const mapStateToProps = state => {
+    return {
+        basketProducts: state.basketProducts
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddedPerson: (name,age) => dispatch({type: actionTypes.ADD_PRODUCT,name,age}),
+        onRemovedPerson: (id) => dispatch({type: actionTypes.REMOVE_PRODUCT, personId: id})
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 
