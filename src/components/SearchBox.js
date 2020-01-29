@@ -1,11 +1,11 @@
 import React from "react";
-import { Input } from "antd";
+//import { Input } from "antd";
 
 export default function SearchBox(props) {
 	const category = props.currentCategory
 		? props.currentCategory.name
 		: "همه آگهی‌ها";
-	const { Search } = Input;
+	//const { Search } = Input;
 	return (
 		<div className="SearchBox">
 			<input

@@ -4,7 +4,7 @@ import items from "./../assets/data/items.json";
 import categories from "../assets/data/categories.json";
 import SideBar from './SideBar';
 import SearchBox from './SearchBox';
-import Categories from './Categories';
+//import Categories from './Categories';
 
 export default class Home extends Component {
     constructor() {
